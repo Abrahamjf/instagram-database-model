@@ -31,7 +31,7 @@ Base = declarative_base()
 
 class User(Base):
     __tablename__ = 'user'
-    id = Column(Integer, primery_key=True)
+    id = Column(Integer, primary_key=True)
     username = Column(String(250), nullable=False, unique=True)
     firstname = Column(String(250), nullable=False, unique=False)
     lastname = Column(String(250), nullable=False, unique=False)
@@ -46,7 +46,7 @@ class Follower(Base):
 class Post(Base):
     __tablename__ = 'post'
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey=('user.id'))
+    user_id = Column(Integer, ForeignKey('user.id'))
 
 class Media(Base):
     __tablename__ = 'media'
